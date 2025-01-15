@@ -151,6 +151,6 @@ TrASPr will save a .npy file with predicted PSI, dPSI+ and dPSI- for each sequen
 
 Please refer to bos folder for details.
 
-## 7. script_external
+## 7. Script for external models
 
 script_external folder includes the sample_data for pangolin and spliceAI prediction and their corresponding scripts. These scripts are adopted from repo [Pangolin](https://github.com/tkzeng/Pangolin/tree/main) and [SpliceAI](https://github.com/Illumina/SpliceAI).
