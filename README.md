@@ -2,7 +2,7 @@
 This repository includes the implementation of 'Generative modeling for RNA splicing
 predictions and design'. Please cite our paper if you use the models or codes. The repo is still actively under development, so please kindly report if there is any issue encountered.
 
- In this package, we provides resources including: source codes of the TrASPr model, BOS, and scripts for reproducing figures in the paper. This package is still under development, as more features will be included gradually.
+ In this package, we provides resources including: source codes of the TrASPr model, BOS, and scripts for reproducing figures in the paper. This package is still under development, as more features will be included gradually. Part of our scripts are adopted and modified from [DANBERT](https://github.com/jerryji1993/DNABERT/tree/master)
 
 ## 1. Environment setup
 
@@ -29,7 +29,16 @@ cd examples
 python3 -m pip install -r requirements.txt
 ```
 
-## 2. Pre-train
+## 2. Data
+
+Here we provide the example data for pre-training and fine-tuning steps under example/sample_data.
+
+In pre-training data, each sample is a 6-mer sequences with the splice site as the center.
+
+In the fine-tuning data, each sample has multiple items including ID, 4 x (6-mer sequences around each splice site), TISSUE1 token, TISSUE2 token, 4 x (exon+intron length feature for each splice site), 4 x (conservation value sequences for each splice site), label(PSI, PSI+, PSI-).
+
+
+## 3. Pre-train
 
 ```
 cd examples
@@ -73,7 +82,7 @@ python run_pretrain.py \
 
 ```
 
-## 3. Fine-tuning
+## 4. Fine-tuning
 
 ```
 export KMER=6
@@ -118,10 +127,14 @@ python finetune_psi.py \
 
 ```
 
-## 4. TrASPr Output
+## 5. TrASPr Output
 
 TrASPr will save a .npy file with predicted PSI, dPSI+ and dPSI- for each sequences in the dev.tsv file from the DATA_PATH. For each checkpoint, there will be corresponding prediction results. The final results and checkpoint results will be stored under OUTPUT_PATH.
 
-## 5. BOS
+## 6. BOS
 
 Please refer to bos folder for details.
+
+## 7. script_external
+
+script_external folder includes the sample_data for pangolin and spliceAI prediction and their corresponding scripts. These scripts are adopted from repo [Pangolin](https://github.com/tkzeng/Pangolin/tree/main) and [SpliceAI](https://github.com/Illumina/SpliceAI).
