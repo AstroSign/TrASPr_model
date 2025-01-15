@@ -43,7 +43,7 @@ In the fine-tuning data, each sample has multiple items including:
 * TISSUE2 token 
 * 4 x exon+intron length feature for each splice site
 * 4 x conservation value sequences for each splice site
-* label: PSI, PSI+, PSI-.
+* label: PSI, PSI+, PSI-
 
 Tissue token and their corresponding name map:
 
