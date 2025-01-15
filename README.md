@@ -47,7 +47,7 @@ In the fine-tuning data, each sample has multiple items including:
 
 Tissue token and their corresponding name map:
 
-- TISS00 : Lung,
+- TISS00 : Lung
 - TISS02 : Heart_Atrial_Appendage
 - TISS03 : Brain_Cerebellum
 - TISS07 : Liver
