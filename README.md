@@ -35,8 +35,24 @@ Here we provide the example data for pre-training and fine-tuning steps under ex
 
 In pre-training data, each sample is a 6-mer sequences with the splice site as the center.
 
-In the fine-tuning data, each sample has multiple items including ID, 4 x (6-mer sequences around each splice site), TISSUE1 token, TISSUE2 token, 4 x (exon+intron length feature for each splice site), 4 x (conservation value sequences for each splice site), label(PSI, PSI+, PSI-).
+In the fine-tuning data, each sample has multiple items including: 
 
+* ID
+* 4 x 6-mer sequences around each splice site
+* TISSUE1 token
+* TISSUE2 token 
+* 4 x exon+intron length feature for each splice site
+* 4 x conservation value sequences for each splice site
+* label: PSI, PSI+, PSI-.
+
+Tissue token and their corresponding name map:
+
+- TISS00 : Lung,
+- TISS02 : Heart_Atrial_Appendage
+- TISS03 : Brain_Cerebellum
+- TISS07 : Liver
+- TISS11 : Spleen
+- TISS14 : Cells_EBV_transformed_lymphocytes
 
 ## 3. Pre-train
 
